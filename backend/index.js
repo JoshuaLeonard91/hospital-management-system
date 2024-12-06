@@ -24,6 +24,19 @@ app.get('/patients', (req, res) => {
     });
 });
 
+app.post('/patients', (req, res) => {
+    const { name, age, gender, contact_info, medical_history } = req.body;
+    const sql = 'INSERT INTO patients (name, age, gender, contact_info, medical_history) VALUES (?, ?, ?, ?, ?)';
+    db.query(sql, [name, age, gender, contact_info, medical_history], (error, result) => {
+        if (error) {
+            console.error('Error adding patient:', err.message);
+            res.status(500).send('Error adding patient');
+        } else {
+            res.json({ message: 'Patient added successfully.', patientId: result.insertId });
+        }
+    });
+});
+
 const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`Website: http://localhost:${PORT}`);
