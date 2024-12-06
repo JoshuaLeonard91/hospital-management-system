@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const PatientList = (props) => {
-    const { patients } = props
+const PatientList = ({ patients }) => {
+
 
     return (
         <div>
