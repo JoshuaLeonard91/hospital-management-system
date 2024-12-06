@@ -1,5 +1,3 @@
-# hospital-management-system
-
 # Hospital Management System
 
 A full-stack Hospital Management System built with **React**, **Node.js**, and **MySQL (Amazon RDS)** to manage patients, appointments, and hospital operations efficiently.
