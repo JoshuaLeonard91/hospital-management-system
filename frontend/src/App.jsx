@@ -15,8 +15,8 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const [patientRes, doctorRes] = await Promise.all([
-        fetch('http://localhost:5000/patients'),
-        fetch('http://localhost:5000/doctors')
+        fetch('https://hospital-management-system-1-le0b.onrender.com/patients'),
+        fetch('https://hospital-management-system-1-le0b.onrender.com/doctors')
       ])
       setPatients(await patientRes.json());
       setDoctors(await doctorRes.json());
@@ -31,7 +31,7 @@ function App() {
 
   const handleCheckIn = async (patientId) => {
     try {
-      const response = await fetch(`http://localhost:5000/patients/${patientId}`, {
+      const response = await fetch(`https://hospital-management-system-1-le0b.onrender.com/${patientId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
