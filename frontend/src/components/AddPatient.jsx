@@ -59,48 +59,64 @@ const AddPatient = ({ patientAddedHandler }) => {
             <h2>Add New Patient</h2>
             {error && <div style={{ color: 'red' }}>Error: {error}</div>}
             {success && <div style={{ color: 'green' }}>Patient added successfully!</div>}
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="number"
-                    name="age"
-                    placeholder="Age"
-                    value={formData.age}
-                    onChange={handleChange}
-                    required
-                />
-                <select
-                    name="gender"
-                    value={formData.gender}
-                    onChange={handleChange}
-                    required
-                >
-                    <option value="">Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-                <input
-                    type="text"
-                    name="contact_info"
-                    placeholder="Contact Info"
-                    value={formData.contact_info}
-                    onChange={handleChange}
-                    required
-                />
-                <textarea
-                    name="medical_history"
-                    placeholder="Medical History"
-                    value={formData.medical_history}
-                    onChange={handleChange}
-                ></textarea>
-                <button type="submit">Add Patient</button>
+
+            <form className="space-y-6" onSubmit={handleSubmit}>
+                <div>
+                    <input
+                        className="w-64 rounded-md bg-gray-800 border border-gray-700 text-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500/50 px-3 py-2"
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <input
+                        className="w-64 rounded-md bg-gray-800 border border-gray-700 text-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500/50 px-3 py-2"
+                        type="number"
+                        name="age"
+                        placeholder="Age"
+                        value={formData.age}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <select
+                        className="w-64 rounded-md bg-gray-800 border border-gray-700 text-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500/50 px-3 py-2"
+                        name="gender"
+                        value={formData.gender}
+                        onChange={handleChange}
+                        required
+                    >
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div>
+                    <input
+                        className="w-64 rounded-md bg-gray-800 border border-gray-700 text-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500/50 px-3 py-2"
+                        type="text"
+                        name="contact_info"
+                        placeholder="Contact Info"
+                        value={formData.contact_info}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <textarea
+                        className="w-64 h-64 rounded-md bg-gray-800 border border-gray-700 text-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500/50 px-3 py-2"
+                        name="medical_history"
+                        placeholder="Medical History"
+                        value={formData.medical_history}
+                        onChange={handleChange}
+                    ></textarea>
+                </div >
+                <button className="w-64 rounded-md bg-gray-800 border border-gray-700 text-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500/50 px-3 py-2" type="submit">Add Patient</button>
             </form>
         </div>
     );

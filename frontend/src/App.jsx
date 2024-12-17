@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './index.css';
 import PatientList from './components/PatientList'
 import AppointmentList from './components/AppointmentList'
 import AddPatient from './components/AddPatient';

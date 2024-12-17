@@ -7,11 +7,14 @@ export default {
   plugins: [],
 }
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}", // Adjust based on your project structure
+  ],
   theme: {
     extend: {},
   },
   plugins: [],
-};
+}
 
 
