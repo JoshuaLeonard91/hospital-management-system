@@ -54,7 +54,7 @@ function App() {
 
   return (
     <>
-      <Dashboard patients={patients} handleCheckIn={handleCheckIn} />
+      <Dashboard patients={patients} handleCheckIn={handleCheckIn} patientAddedHandler={patientAddedHandler} />
       {/* <h1>Hospital Management System</h1>
       {error && <div style={{ color: 'red' }}>Error: {error}</div>}
       <AddPatient patientAddedHandler={patientAddedHandler} />
