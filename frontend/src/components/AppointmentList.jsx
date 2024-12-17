@@ -31,6 +31,7 @@ export default function AppointmentList() {
         <div>
             <h2>Appointments</h2>
             <ul>
+                PLACEHOLDER
                 {appointments.map((appointments) => (
                     <li> key={appointments.appointments_id}
                         {appointments.appointment_date} -

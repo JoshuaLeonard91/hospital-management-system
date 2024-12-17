@@ -2,15 +2,20 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import PatientList from './PatientList'
+import AppointmentList from './AppointmentList'
+import AddAppointment from './AddAppointment'
+import AddPatient from './AddPatient'
 
 const navigation = [
-    { name: 'Appointments', href: '#', component: null },
-    { name: 'New Appointment', href: '#', component: null },
+    { name: 'Appointments', href: '#', component: 'AppointmentList' },
+    { name: 'New Appointment', href: '#', component: 'AddAppointment' },
     { name: 'Patient Check-in', href: '#', component: 'PatientList' },
-    { name: 'Add Patient', href: '#', component: null },
-    { name: 'Calendar', href: '#', component: null },
+    { name: 'Add Patient', href: '#', component: 'AddPatient' },
+    { name: 'Calendar', href: '#', component: 'Calendar' },
 ]
-
+function Calendar() {
+    return <div>Calendar Component</div>
+}
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -40,7 +45,10 @@ export default function Dashboard({ patients, handleCheckIn }) {
                                                 key={item.name}
                                                 onClick={() => setActiveComponent(item.component)}
                                                 className={classNames(
-                                                    'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'
+                                                    activeComponent === item.component
+                                                        ? 'bg-gray-700 text-white' // Highlight active item
+                                                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                    'rounded-md px-3 py-2 text-sm font-medium'
                                                 )}
                                             >
                                                 {item.name}
@@ -70,7 +78,11 @@ export default function Dashboard({ patients, handleCheckIn }) {
                 <main>
                     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                         {/* Dynamically Render the Component */}
+                        {activeComponent === 'AppointmentList' && <AppointmentList />}
+                        {activeComponent === 'AddAppointment' && <AddAppointment />}
                         {activeComponent === 'PatientList' && <PatientList patients={patients} handleCheckIn={handleCheckIn} />}
+                        {activeComponent === 'AddPatient' && <AddPatient />}
+                        {activeComponent === 'Calendar' && <Calendar />}
                     </div>
                 </main>
             </div>

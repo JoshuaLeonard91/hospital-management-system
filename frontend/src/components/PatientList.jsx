@@ -16,17 +16,18 @@ const PatientList = ({ patients, handleCheckIn }) => {
         //     </ul>
         // </div>
 
-        <div className="bg-gray-800 text-gray-200 p-6 rounded-lg shadow-lg">
-            <h2 className="text-xl font-semibold mb-4 text-center">Patient List</h2>
+        <div>
+            <h2 className="text-xl font-semibold mb-4 text-center">Patient Check-in List</h2>
             <div className="space-y-4">
                 {patients.map((patient) => (
                     <div
                         key={patient.patient_id}
-                        className="flex items-center justify-between bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition-colors"
+                        className="flex items-center justify-between bg-gray-800 p-4 rounded-lg"
                     >
                         <div className="flex flex-col">
                             <span className="text-lg font-medium">{patient.name}</span>
                             <span className="text-sm text-gray-400">{patient.age} years old</span>
+                            <span className="text-sm text-gray-400">{patient.medical_history}</span>
                         </div>
                         <button
                             onClick={() => handleCheckIn(patient.patient_id)}
