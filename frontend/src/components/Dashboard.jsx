@@ -10,8 +10,7 @@ const navigation = [
     { name: 'Appointments', href: '#', component: 'AppointmentList' },
     { name: 'New Appointment', href: '#', component: 'AddAppointment' },
     { name: 'Patient Check-in', href: '#', component: 'PatientList' },
-    { name: 'Add Patient', href: '#', component: 'AddPatient' },
-    { name: 'Calendar', href: '#', component: 'Calendar' },
+    { name: 'Add Patient', href: '#', component: 'AddPatient' }
 ]
 function Calendar() {
     return <div>Calendar Component</div>
@@ -84,7 +83,6 @@ export default function Dashboard({ patients, handleCheckIn, patientAddedHandler
                         {activeComponent === 'AddAppointment' && <AddAppointment />}
                         {activeComponent === 'PatientList' && <PatientList patients={patients} handleCheckIn={handleCheckIn} />}
                         {activeComponent === 'AddPatient' && <AddPatient patientAddedHandler={patientAddedHandler} />}
-                        {activeComponent === 'Calendar' && <Calendar />}
                     </div>
                 </main>
             </div>
