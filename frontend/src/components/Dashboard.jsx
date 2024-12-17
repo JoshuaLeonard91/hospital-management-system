@@ -6,7 +6,7 @@ import PatientList from './PatientList'
 const navigation = [
     { name: 'Appointments', href: '#', component: null },
     { name: 'New Appointment', href: '#', component: null },
-    { name: 'Patients', href: '#', component: 'PatientList' },
+    { name: 'Patient Check-in', href: '#', component: 'PatientList' },
     { name: 'Add Patient', href: '#', component: null },
     { name: 'Calendar', href: '#', component: null },
 ]
@@ -21,14 +21,6 @@ export default function Dashboard({ patients }) {
 
     return (
         <>
-            {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
             <div className="min-h-full">
                 <Disclosure as="nav" className="bg-gray-800">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
