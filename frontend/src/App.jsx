@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
+import Dashboard from './components/Dashboard';
 import PatientList from './components/PatientList'
 import AppointmentList from './components/AppointmentList'
 import AddPatient from './components/AddPatient';
@@ -31,12 +32,13 @@ function App() {
 
   return (
     <>
-      <h1>Hospital Management System</h1>
+      <Dashboard patients={patients} />
+      {/* <h1>Hospital Management System</h1>
       {error && <div style={{ color: 'red' }}>Error: {error}</div>}
       <AddPatient patientAddedHandler={patientAddedHandler} />
       <PatientList patients={patients} />
       <AddAppointment patients={patients} doctors={doctors} />
-      <AppointmentList />
+      <AppointmentList /> */}
 
     </>
   )
