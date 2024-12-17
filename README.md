@@ -9,8 +9,6 @@ A full-stack Hospital Management System built with **React**, **Node.js**, and *
 - **Patient Management**: Add, view, and manage patient records.
 - **Doctor Management**: Assign doctors to patients and manage schedules.
 - **Appointment Scheduling**: Book and manage appointments.
-- **Billing**: Generate and manage invoices for patients.
-- **Room Allocation**: Track and assign available rooms to inpatients.
 
 ---
 
