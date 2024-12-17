@@ -110,6 +110,23 @@ app.post('/appointments', (req, res) => {
     });
 });
 
+app.post('/check-in/:patientId', (req, res) => {
+    const patientId = req.params.patientId;
+
+    const query = 'UPDATE patients SET checked_in = 1 WHERE patient_id = ?';
+    db.query(query, [patientId], (err, result) => {
+        if (err) {
+            res.status(500).json({ message: 'Error checking in patient' });
+        } else {
+            if (result.affectedRows > 0) {
+                res.json({ message: 'Patient checked in successfully' });
+            } else {
+                res.status(404).json({ message: 'Patient not found' });
+            }
+        }
+    });
+});
+
 
 const PORT = 5000;
 app.listen(PORT, () => {

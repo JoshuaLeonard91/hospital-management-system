@@ -29,10 +29,32 @@ function App() {
     setPatients((prevPatients) => [...prevPatients, newPatient]);
   };
 
+  const handleCheckIn = async (patientId) => {
+    try {
+      const response = await fetch(`http://localhost:5000/patients/${patientId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ checked_in: true }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to check in patient');
+      }
+
+      // Remove the checked-in patient from the list
+      setPatients((prevPatients) =>
+        prevPatients.filter((patient) => patient.patient_id !== patientId)
+      );
+    } catch (error) {
+      console.error('Error checking in patient:', error);
+    }
+  };
 
   return (
     <>
-      <Dashboard patients={patients} />
+      <Dashboard patients={patients} handleCheckIn={handleCheckIn} />
       {/* <h1>Hospital Management System</h1>
       {error && <div style={{ color: 'red' }}>Error: {error}</div>}
       <AddPatient patientAddedHandler={patientAddedHandler} />

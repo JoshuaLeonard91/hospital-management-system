@@ -16,7 +16,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Dashboard({ patients }) {
+export default function Dashboard({ patients, handleCheckIn }) {
     const [activeComponent, setActiveComponent] = useState(null)
 
     return (
@@ -70,7 +70,7 @@ export default function Dashboard({ patients }) {
                 <main>
                     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                         {/* Dynamically Render the Component */}
-                        {activeComponent === 'PatientList' && <PatientList patients={patients} />}
+                        {activeComponent === 'PatientList' && <PatientList patients={patients} handleCheckIn={handleCheckIn} />}
                     </div>
                 </main>
             </div>
