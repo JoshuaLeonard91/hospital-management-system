@@ -31,12 +31,12 @@ function App() {
 
   const handleCheckIn = async (patientId) => {
     try {
-      const response = await fetch(`https://hospital-management-system-1-le0b.onrender.com/patients/${patientId}`, {
-        method: 'PATCH',
+      const response = await fetch(`https://hospital-management-system-1-le0b.onrender.com/check-in/${patientId}`, {
+        method: 'POST', // Change to POST instead of PATCH
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ checked_in: true }),
+        body: JSON.stringify({ checked_in: true }), // This may be optional based on your backend
       });
 
       if (!response.ok) {
