@@ -31,7 +31,7 @@ function App() {
 
   const handleCheckIn = async (patientId) => {
     try {
-      const response = await fetch(`https://hospital-management-system-1-le0b.onrender.com/${patientId}`, {
+      const response = await fetch(`https://hospital-management-system-1-le0b.onrender.com/patients/${patientId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
