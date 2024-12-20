@@ -60,7 +60,7 @@ const AddPatient = ({ patientAddedHandler }) => {
             {error && <div style={{ color: 'red' }}>Error: {error}</div>}
             {success && <div style={{ color: 'green' }}>Patient added successfully!</div>}
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-6"> { /*onSubmit={handleSubmit} */}
                 <div>
                     <input
                         className="w-64 rounded-md bg-gray-800 border border-gray-700 text-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500/50 px-3 py-2"
